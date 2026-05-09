@@ -3,107 +3,92 @@
     {
       "level": 1,
       "title": "Konstruktor Haseł",
-      "question": "Wybierz odpowiednie kafelki, aby zbudować bezpieczniejsze hasło.",
-      "clickable_elements": ["kot", "K0t", "haslo", "!", "1423", "1234"],
-      "correct_answers": ["K0t", "!", "1423"],
-      "explanation": "Silne hasło to unikalna kombinacja słów, cyfr i znaków specjalnych."
+      "aiPrompt": "Stwórz krótką wiadomość zachęcającą użytkownika do stworzenia silnego hasła. Podaj przykład jednego słabego hasła opartego na popularnym słowie i cyfrach.",
+      "clickable_elements": ["Kot", "!", "Mruczek", "2024", "password", "123456"],
+      "correct_answers": ["Mruczek", "2024", "!"],
+      "explanation": "Świetnie! Silne hasło to unikalna kombinacja słów, cyfr i znaków specjalnych. Unikaj popularnych sekwencji jak '123456' czy samego słowa 'Kot'.",
+      "is_ai_generated": true
     },
     {
       "level": 2,
       "title": "Fałszywy Kurier",
-      "is_ai_generated": true,
-      "question": "Otrzymałeś tego SMS-a. Kliknij elementy, które świadczą o tym, że to oszustwo.",
+      "aiPrompt": "Wygeneruj treść fałszywego SMS-a od firmy kurierskiej (np. InPost). Wiadomość musi zawierać literówkę w nazwie nadawcy, informację o małej niedopłacie i podejrzany link.",
       "clickable_elements": ["Nadawca: lnPost", "Kwota: 1,50 PLN", "Link: http://doplata-paczka.xyz/234"],
       "correct_answers": ["Nadawca: lnPost", "Link: http://doplata-paczka.xyz/234"],
-      "explanation": "Dobry refleks! Oszuści celowo robią literówki w nazwach firm (lnPost zamiast InPost) i używają podejrzanych linków. Zawsze sprawdzaj adres, zanim klikniesz."
+      "explanation": "Dobry refleks! Oszuści celowo robią literówki w nazwach firm (lnPost zamiast InPost) i używają podejrzanych linków.",
+      "is_ai_generated": true
     },
     {
       "level": 3,
       "title": "Kawiarniane Wi-Fi",
-      "question": "Siedzisz w kawiarni na publicznym, otwartym Wi-Fi. Jakie czynności powinieneś odłożyć na później?",
+      "aiPrompt": "Opisz sytuację, w której użytkownik łączy się z darmowym Wi-Fi w kawiarni 'Starlight Coffee'. Zapytaj, jakiej ryzykownej czynności nie powinien teraz wykonywać.",
       "clickable_elements": ["Czytanie portalu informacyjnego", "Logowanie do aplikacji bankowej", "Sprawdzanie pogody"],
       "correct_answers": ["Logowanie do aplikacji bankowej"],
-      "explanation": "Dokładnie tak! Publiczne sieci Wi-Fi są łatwe do podsłuchania. Logowanie do banku czy podawanie haseł zostaw na bezpieczną sieć domową lub użyj danych komórkowych."
+      "explanation": "Dokładnie tak! Publiczne sieci Wi-Fi są łatwe do podsłuchania. Logowanie do banku zostaw na bezpieczną sieć domową.",
+      "is_ai_generated": true
     },
     {
       "level": 4,
       "title": "Ciekawska Latarka",
-      "question": "Ta aplikacja latarki prosi o uprawnienia. Kliknij przełączniki, aby ODZNAczyć te, które są jej zbędne.",
+      "aiPrompt": "Wygeneruj opis nowej aplikacji mobilnej 'Super Bright Flashlight'. Opis powinien brzmieć zachęcająco, ale sugerować, że aplikacja chce dostępu do zbyt wielu danych.",
       "clickable_elements": ["Aparat/Flesz", "Lokalizacja", "Kontakty", "Mikrofon"],
       "correct_answers": ["Lokalizacja", "Kontakty", "Mikrofon"],
-      "explanation": "Zgadza się. Prosta latarka potrzebuje tylko dostępu do flesza w aparacie. Jeśli aplikacja żąda dostępu do kontaktów czy mikrofonu, prawdopodobnie chce wykradać Twoje dane."
+      "explanation": "Zgadza się. Prosta latarka potrzebuje tylko dostępu do flesza. Dostęp do kontaktów to próba kradzieży danych.",
+      "is_ai_generated": true
     },
     {
       "level": 5,
       "title": "Zbyt Szczery Post",
-      "question": "Chcesz opublikować zdjęcie biletu. Kliknij dane, które musisz zamazać przed publikacją.",
-      "clickable_elements": ["Kod kreskowy", "Imię i nazwisko", "Numer rezerwacji", "Nazwa zespołu (koncert)", "Data wydarzenia"],
+      "aiPrompt": "Opisz krótko post na social media, w którym ktoś chwali się biletem na koncert. Wspomnij, że na zdjęciu widać wszystkie dane biletu.",
+      "clickable_elements": ["Kod kreskowy", "Imię i nazwisko", "Numer rezerwacji", "Nazwa zespołu", "Data wydarzenia"],
       "correct_answers": ["Kod kreskowy", "Imię i nazwisko", "Numer rezerwacji"],
-      "explanation": "Bardzo dobrze! Udostępnienie kodu kreskowego lub numeru rezerwacji z nazwiskiem pozwala każdemu ukraść Twój bilet lub zmienić rezerwację."
+      "explanation": "Bardzo dobrze! Udostępnienie kodu kreskowego pozwala każdemu ukraść Twój bilet.",
+      "is_ai_generated": true
     },
     {
       "level": 6,
       "title": "Oszustwo na BLIKA",
-      "is_ai_generated": true,
-      "question": "Znajomy pilnie prosi Cię o kod BLIK na komunikatorze. Kliknij najbezpieczniejszą reakcję.",
-      "clickable_elements": [
-        "Wysyłam kod: 443 212",
-        "Nie mam pieniędzy, odpisz komuś innemu.",
-        "Zaraz do ciebie zadzwonię, żeby to potwierdzić."
-      ],
+      "aiPrompt": "Stwórz pilną wiadomość na komunikatorze od 'znajomego', który twierdzi, że stoi przy kasie i pilnie potrzebuje pożyczyć kod BLIK.",
+      "clickable_elements": ["Wysyłam kod: 443 212", "Nie mam pieniędzy.", "Zaraz do ciebie zadzwonię, żeby to potwierdzić."],
       "correct_answers": ["Zaraz do ciebie zadzwonię, żeby to potwierdzić."],
-      "explanation": "Brawo! Oszuści często przejmują konta na portalach społecznościowych. Zawsze weryfikuj prośby o pieniądze, dzwoniąc do danej osoby."
+      "explanation": "Brawo! Oszuści często przejmują konta. Zawsze weryfikuj prośby o pieniądze, dzwoniąc do danej osoby.",
+      "is_ai_generated": true
     },
     {
       "level": 7,
-      "title": "Prawda czy Sztuczna Inteligencja?",
-      "question": "Ten wywiad wideo wygląda dziwnie. Kliknij anomalie zdradzające, że to Deepfake.",
-      "clickable_elements": ["Twarz rozmówcy", "Dłonie mające 6 palców", "Nienaturalnie rozmyte tło", "Mikrofon", "Tekst na koszulce z błędami (tzw. gibberish)"],
-      "correct_answers": ["Dłonie mające 6 palców", "Nienaturalnie rozmyte tło", "Tekst na koszulce z błędami (tzw. gibberish)"],
-      "explanation": "Znakomite oko! Generatory obrazów i wideo AI mają problemy z detalami (szczególnie dłońmi i renderowaniem czytelnego tekstu w tle)."
+      "title": "Prawda czy Deepfake?",
+      "aiPrompt": "Opisz krótki, podejrzany wywiad wideo z politykiem lub celebrytą, w którym obraz wydaje się nienaturalny, a głos nie pasuje do ruchu ust.",
+      "clickable_elements": ["Twarz rozmówcy", "Dłonie mające 6 palców", "Nienaturalnie rozmyte tło", "Mikrofon", "Tekst na koszulce z błędami"],
+      "correct_answers": ["Dłonie mające 6 palców", "Nienaturalnie rozmyte tło", "Tekst na koszulce z błędami"],
+      "explanation": "Znakomite oko! Generatory AI mają problemy z detalami, takimi jak dłonie czy tekst.",
+      "is_ai_generated": true
     },
     {
       "level": 8,
       "title": "Zakupy w Sieci",
-      "question": "Jesteś w koszyku w nowym sklepie. Kliknij wszystkie niebezpieczne sygnały przed dokonaniem płatności.",
-      "clickable_elements": [
-        "Adres: http://super-buty-promo.com (brak kłódki)",
-        "Płatność: Przelew bezpośredni na konto na Cyprze",
-        "Płatność: Szybki przelew / PayU",
-        "Opinie: 100% pozytywnych komentarzy dodanych tego samego dnia"
-      ],
-      "correct_answers": [
-        "Adres: http://super-buty-promo.com (brak kłódki)",
-        "Płatność: Przelew bezpośredni na konto na Cyprze",
-        "Opinie: 100% pozytywnych komentarzy dodanych tego samego dnia"
-      ],
-      "explanation": "Doskonale. Bezpieczny sklep musi mieć certyfikat SSL (HTTPS i kłódka w adresie). Brak zaufanych bramek płatniczych i podejrzane opinie to ogromne czerwone flagi."
+      "aiPrompt": "Wygeneruj opis podejrzanego sklepu internetowego z ogromnymi promocjami (np. markowe buty za 20% ceny). Wspomnij o braku bezpiecznego połączenia.",
+      "clickable_elements": ["Adres: http://super-buty.com (brak kłódki)", "Płatność: Przelew na konto na Cyprze", "Płatność: PayU", "Opinie: Wszystkie z dzisiaj"],
+      "correct_answers": ["Adres: http://super-buty.com (brak kłódki)", "Płatność: Przelew na konto na Cyprze", "Opinie: Wszystkie z dzisiaj"],
+      "explanation": "Doskonale. Bezpieczny sklep musi mieć certyfikat SSL (HTTPS). Brak zaufanych płatności to czerwona flaga.",
+      "is_ai_generated": true
     },
     {
       "level": 9,
       "title": "Tarcza Ochronna",
-      "question": "Na ekranie pojawia się powiadomienie o krytycznej aktualizacji i wirusy w tle. Co klikniesz?",
-      "clickable_elements": ["Zignoruj i graj dalej", "Przypomnij jutro", "Zainstaluj łatkę bezpieczeństwa"],
+      "aiPrompt": "Opisz wyskakujące powiadomienie systemowe o wykryciu nowej luki bezpieczeństwa i dostępnej krytycznej aktualizacji.",
+      "clickable_elements": ["Zignoruj", "Przypomnij jutro", "Zainstaluj łatkę bezpieczeństwa"],
       "correct_answers": ["Zainstaluj łatkę bezpieczeństwa"],
-      "explanation": "System uratowany! Aktualizacje to nie tylko nowe funkcje, to przede wszystkim 'łatanie dziur', przez które wirusy mogą dostać się do Twojego urządzenia."
+      "explanation": "System uratowany! Aktualizacje to przede wszystkim 'łatanie dziur' w bezpieczeństwie.",
+      "is_ai_generated": true
     },
     {
       "level": 10,
-      "title": "BOSS: Symulacja Włamania (Cyfrowy Dzień)",
-      "question": "Zagrożenia atakują ze wszystkich stron! Na Twoim ekranie pojawiają się różne okienka. Kliknij odpowiednią akcję obronną dla każdego z nich.",
-      "clickable_elements": [
-        "Email od 'Szef': Podaj mi swoje hasło do systemu! -> Kliknij: 'Zgłoś Phishing'",
-        "Wyskakujące okienko: Wygrałeś iPhone'a! Kliknij tutaj! -> Kliknij: 'Zamknij okno (X)'",
-        "SMS: Twoja paczka została wstrzymana, link... -> Kliknij: 'Usuń wiadomość'",
-        "Powiadomienie: Twój antywirus wymaga aktualizacji -> Kliknij: 'Zaktualizuj teraz'"
-      ],
-      "correct_answers": [
-        "Email od 'Szef': Podaj mi swoje hasło do systemu! -> Kliknij: 'Zgłoś Phishing'",
-        "Wyskakujące okienko: Wygrałeś iPhone'a! Kliknij tutaj! -> Kliknij: 'Zamknij okno (X)'",
-        "SMS: Twoja paczka została wstrzymana, link... -> Kliknij: 'Usuń wiadomość'",
-        "Powiadomienie: Twój antywirus wymaga aktualizacji -> Kliknij: 'Zaktualizuj teraz'"
-      ],
-      "explanation": "GRATULACJE! Pokonałeś BOSSa! W prawdziwym życiu zagrożenia rzadko pojawiają się pojedynczo. Twoja wiedza, czujność i umiejętność zachowania spokoju to najlepsza obrona w cyfrowym świecie."
+      "title": "BOSS: Symulacja Włamania",
+      "aiPrompt": "Stwórz finałowy scenariusz, w którym system gracza jest atakowany przez wiele zagrożeń jednocześnie: podejrzany email, pop-up i SMS. Zażądaj reakcji.",
+      "clickable_elements": ["Zgłoś Phishing", "Zamknij okno (X)", "Usuń wiadomość", "Zaktualizuj teraz"],
+      "correct_answers": ["Zgłoś Phishing", "Zamknij okno (X)", "Usuń wiadomość", "Zaktualizuj teraz"],
+      "explanation": "GRATULACJE! Pokonałeś BOSSa! Twoja wiedza i czujność to najlepsza obrona w cyfrowym świecie.",
+      "is_ai_generated": true
     }
   ]
 }
