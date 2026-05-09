@@ -1,29 +1,72 @@
 package com.example.gra.service;
 
-import com.example.gra.dto.LevelDto;
-import com.example.gra.dto.AnswerResponse;
+import com.example.gra.dto.*;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
-import java.util.Arrays;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class LevelService {
+    private final List<JsonNode> levelsData = new ArrayList<>();
+    private final ObjectMapper objectMapper = new ObjectMapper();
 
-    // Symulacja bazy danych na start
+    @PostConstruct
+    public void init() throws IOException {
+        // Wczytujemy plik levels.json z zasobów
+        JsonNode root = objectMapper.readTree(new ClassPathResource("levels.json").getInputStream());
+        JsonNode gameData = root.get("game_data");
+        if (gameData.isArray()) {
+            for (JsonNode node : gameData) {
+                levelsData.add(node);
+            }
+        }
+    }
+
     public LevelDto getLevel(int id) {
-        if (id == 1) {
-            return new LevelDto(1, "Konstruktor Haseł",
-                    "Który zestaw stworzy najmocniejsze hasło?",
-                    Arrays.asList("Marcin1990", "Fioletowy!2Slon?", "Piesek123"), false);
+        // Szukamy poziomu o danym ID
+        for (JsonNode node : levelsData) {
+            if (node.get("level").asInt() == id) {
+                List<String> options = new ArrayList<>();
+                node.get("clickable_elements").forEach(opt -> options.add(opt.asText()));
+
+                return new LevelDto(
+                        node.get("level").asInt(),
+                        node.get("title").asText(),
+                        node.get("question").asText(),
+                        options,
+                        node.has("is_ai_generated") && node.get("is_ai_generated").asBoolean()
+                );
+            }
         }
         return null;
     }
 
     public AnswerResponse verifyAnswer(int id, int selectedIndex) {
-        // Na razie prosta logika dla poziomu 1 (poprawna odp to index 1)
-        boolean isCorrect = (id == 1 && selectedIndex == 1);
-        String msg = isCorrect ? "Świetnie! To hasło jest bardzo trudne do złamania."
-                : "Niestety, to hasło jest zbyt proste.";
-        return new AnswerResponse(isCorrect, msg);
+        for (JsonNode node : levelsData) {
+            if (node.get("level").asInt() == id) {
+                List<String> clickable = new ArrayList<>();
+                node.get("clickable_elements").forEach(opt -> clickable.add(opt.asText()));
+
+                String selectedValue = clickable.get(selectedIndex);
+                boolean correct = false;
+
+                // Sprawdzamy, czy wybrana opcja znajduje się na liście poprawnych odpowiedzi
+                for (JsonNode correctNode : node.get("correct_answers")) {
+                    if (correctNode.asText().equals(selectedValue)) {
+                        correct = true;
+                        break;
+                    }
+                }
+
+                return new AnswerResponse(correct, node.get("explanation").asText());
+            }
+        }
+        return new AnswerResponse(false, "Nie znaleziono poziomu.");
     }
 }
