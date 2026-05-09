@@ -3,10 +3,10 @@
     {
       "level": 1,
       "title": "Konstruktor Haseł",
-      "question": "Wybierz klocki, aby zbudować silne i bezpieczne hasło.",
-      "clickable_elements": ["Kot", "!", "Mruczek", "2024", "password", "123456"],
-      "correct_answers": ["Mruczek", "2024", "!"],
-      "explanation": "Świetnie! Silne hasło to unikalna kombinacja słów, cyfr i znaków specjalnych. Unikaj popularnych sekwencji jak '123456' czy samego słowa 'Kot'."
+      "question": "Wybierz odpowiednie kafelki, aby zbudować bezpieczniejsze hasło.",
+      "clickable_elements": ["kot", "K0t", "haslo", "!", "1423", "1234"],
+      "correct_answers": ["K0t", "!", "1423"],
+      "explanation": "Silne hasło to unikalna kombinacja słów, cyfr i znaków specjalnych."
     },
     {
       "level": 2,
