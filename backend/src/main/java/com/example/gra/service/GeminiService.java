@@ -23,7 +23,7 @@ public class GeminiService {
         try {
             String url = apiUrl + "?key=" + apiKey;
 
-            // Struktura JSON wymagana przez Google Gemini
+            // Reszta kodu pozostaje bez zmian...
             Map<String, Object> requestBody = Map.of(
                     "contents", List.of(
                             Map.of("parts", List.of(
