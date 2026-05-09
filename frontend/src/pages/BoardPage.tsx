@@ -30,7 +30,11 @@ function BoardPage() {
         </div>
       </header>
 
-      <Board levels={gameState.levels} onSelectLevel={handleSelectLevel} />
+      <Board
+        levels={gameState.levels}
+        currentLevel={gameState.currentLevel}
+        onSelectLevel={handleSelectLevel}
+      />
     </main>
   );
 }

@@ -17,12 +17,14 @@ function BoardTile({ level, onClick }: BoardTileProps) {
       aria-label={`${level.title}, status: ${level.status}`}
     >
       <span className="board-tile__number">{level.id}</span>
-      <span className="board-tile__title">{level.title}</span>
-      <span className="board-tile__status">
-        {isLocked && "Zablokowany"}
-        {isCompleted && "Ukończony"}
-        {level.status === "unlocked" && "Dostępny"}
+
+      <span className="board-tile__icon" aria-hidden="true">
+        {isLocked && "🔒"}
+        {isCompleted && "✅"}
+        {level.status === "unlocked" && "⭐"}
       </span>
+
+      <span className="board-tile__title">{level.title}</span>
     </button>
   );
 }

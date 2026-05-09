@@ -9,9 +9,22 @@ type GameContextType = {
   resetGame: () => void;
 };
 
-const initialLevels: Level[] = Array.from({ length: 10 }, (_, index) => ({
+const levelTitles = [
+  "Hasło",
+  "Phishing",
+  "SMS",
+  "Link",
+  "Załącznik",
+  "Wi-Fi",
+  "Aktualizacja",
+  "Socjotechnika",
+  "Dane",
+  "BOSS",
+];
+
+const initialLevels: Level[] = levelTitles.map((title, index) => ({
   id: index + 1,
-  title: `Poziom ${index + 1}`,
+  title,
   status: index === 0 ? "unlocked" : "locked",
 }));
 

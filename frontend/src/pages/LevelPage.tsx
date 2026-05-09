@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useGame } from "../store/GameContext";
 
@@ -5,6 +6,7 @@ function LevelPage() {
   const navigate = useNavigate();
   const { levelId } = useParams();
   const { gameState, completeLevel, loseLife } = useGame();
+  const [showHackedMessage, setShowHackedMessage] = useState(false);
 
   const numericLevelId = Number(levelId);
 
@@ -45,6 +47,10 @@ function LevelPage() {
 
   const handleWrongAnswer = () => {
     loseLife();
+
+    if (gameState.lives - 1 === 0) {
+      setShowHackedMessage(true);
+    }
   };
 
   return (
@@ -63,7 +69,11 @@ function LevelPage() {
             Symuluj poprawną odpowiedź
           </button>
 
-          <button className="secondary-button" onClick={handleWrongAnswer}>
+          <button
+            className="secondary-button"
+            onClick={handleWrongAnswer}
+            disabled={gameState.lives === 0}
+          >
             Symuluj błędną odpowiedź
           </button>
 
@@ -76,6 +86,33 @@ function LevelPage() {
           Punkty: {gameState.points} | Życia: {gameState.lives}
         </p>
       </section>
+
+      {showHackedMessage && (
+        <div className="hacked-overlay" role="alertdialog" aria-modal="true">
+          <div className="hacked-modal">
+            <div className="hacked-icon" aria-hidden="true">
+              💀
+            </div>
+
+            <h2>Zostałeś zhakowany haha</h2>
+
+            <p>
+              Straciłeś wszystkie życia. Cyberprzestępcy wykorzystali Twoje
+              błędne decyzje.
+            </p>
+
+            <button
+              className="primary-button"
+              onClick={() => {
+                setShowHackedMessage(false);
+                navigate("/board");
+              }}
+            >
+              Wróć do planszy
+            </button>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
