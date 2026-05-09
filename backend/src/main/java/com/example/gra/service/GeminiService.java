@@ -23,7 +23,6 @@ public class GeminiService {
         try {
             String url = apiUrl + "?key=" + apiKey;
 
-            // Reszta kodu pozostaje bez zmian...
             Map<String, Object> requestBody = Map.of(
                     "contents", List.of(
                             Map.of("parts", List.of(
